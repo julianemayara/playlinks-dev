@@ -1,0 +1,221 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* VARIAVEIS DO MOOD LUZ - BLACK */
+:root {
+  --text-color: black;
+  --bg-url: url(./assets/bg-mobile-mood-white.jpg);
+  --stroke-color: rgba(0, 0, 0, 0.5);
+  --surface-color: rgba(209, 131, 131, 0.05);
+  --surface-color-hover: rgba(13, 12, 12, 0.02);
+  --highlight-color: rgba(255, 255, 255, 0.2);
+  --btn-bg-url: url(./assets/sun.svg);
+}
+
+/* VARIAVEIS DO MOOD LUZ - WHITE */
+.luz {
+  --text-color: white;
+  --bg-url: url(./assets/bg-mobile-mood-black.jpg);
+  --stroke-color: rgba(255, 255, 255, 0.5);
+  --surface-color: rgba(0, 0, 0, 0.05);
+  --surface-color-hover: rgba(0, 0, 0, 0.02);
+  --highlight-color: rgba(0, 0, 0, 0.1);
+  --btn-bg-url: url(./assets/moon-stars.svg);
+}
+
+
+
+body {
+  background: var(--bg-url) no-repeat top center/cover;
+  height: 100vh;
+}
+
+body * {
+  font-family: "Inter", sans-serif;
+  color: var(--text-color);
+}
+
+.container {
+  width: 100%;
+  max-width: 588px;
+  margin: 56px auto 0px;
+  padding: 0 24px;
+}
+
+
+
+/* CAMPO  DO PERFIL */
+.profile {
+  text-align: center;
+  padding: 24px;
+}
+
+.profile img {
+  width: 112px;
+  border-radius: 50px;
+}
+
+.profile p {
+  font-family: inherit;
+  font-weight: 900;
+  line-height: 24px;
+  margin-top: 8px;
+}
+
+
+
+/* CAMPO DO BOTAO */
+.btn {
+  position: relative;
+  width: 64px;
+
+  margin: 4px auto;
+}
+
+.btn button {
+  width: 32px;
+  height: 32px;
+  background: white var(--btn-bg-url) no-repeat center;
+  border: 0;
+  border-radius: 50%;
+
+  position: absolute;
+  top: 50%;
+  left: 0;
+  z-index: 1;
+  transform: translateY(-50%);
+
+  animation: slide-back 0.2s;
+}
+
+.luz .btn button {
+  animation: slide-in 0.2s forwards;
+}
+
+.btn button:hover {
+  outline: 8px solid var(--highlight-color);
+}
+
+.btn span {
+  display: block;
+  width: 64px;
+  height: 24px;
+  background: var(--surface-color);
+  border: 1px solid var(--stroke-color);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 9999px;
+}
+
+
+
+
+/* CAMPO DAS PLAYLISTS LINKS */
+ul {
+  list-style: none;
+
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  padding: 24px 0;
+}
+
+ul li a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 16px 24px;
+
+  background: var(--surface-color);
+  border: 1px solid var(--stroke-color);
+  border-radius: 50px;
+
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+
+  text-decoration: none;
+  font-weight: 500;
+
+  transition: background 0.2s;
+}
+
+ul li a:hover {
+  background: var(--surface-color-hover);
+  border: 1.5px solid var(--text-color);
+}
+
+
+
+
+/* CAMPO DAS SOCIAIS MIDIAS - LINKS */
+.social-links {
+  display: flex;
+  justify-content: center;
+
+  padding: 24px 0;
+
+  font-size: 24px;
+}
+
+.social-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+
+  transition: background 0.2s;
+  border-radius: 50%;
+}
+
+.social-links a:hover {
+  background: var(--highlight-color);
+}
+
+footer {
+  padding: 4px 0;
+  text-align: center;
+  align-items: center;
+  font-size: 10px;
+}
+
+
+
+
+
+
+
+
+/* CAMPO DO MEDIA QUERY - RESPONSIVIDADE, ADAPTAÇÃO A DIFERENTES TELAS. */
+@media (min-width: 700px) {
+  :root {
+    --bg-url: url(./assets/bg-desktop-white.jpg);
+  }
+
+  .luz {
+    --bg-url: url(./assets/bg-desktop-black.jpg);
+  }
+}
+
+/* ANIMAÇÃO DO BOTAO - ROLAGEM */
+@keyframes slide-in {
+  from {
+    left: 0;
+  }
+  to {
+    left: 50%;
+  }
+}
+
+@keyframes slide-back {
+  from {
+    left: 50%;
+  }
+  to {
+    left: 0;
+  }
+}
