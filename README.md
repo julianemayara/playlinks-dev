@@ -1,5 +1,5 @@
 <h1> UM MINI PROJETO - PLAYLINKS DEV </h1>
-<p> Feito atraves de 5 aulas assistidas na plataforma da rocketseat - proff mayk brito. <br>
+<p> Feito atraves aulas assistidas na plataforma da rocketseat - proff mayk brito. <br>
 nas aulas o mayk fez um perfil pessoal com links de redes sociais como um portifolio, eu fiz com minhas playlits, <br>
 e usa-se o javascript para fazer a interação de rolagem do botão em modo claro para o modo escuro. Layout responsivo.</p>
 <br>
